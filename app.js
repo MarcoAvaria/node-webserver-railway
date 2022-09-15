@@ -23,30 +23,30 @@ app.use( express.static('public') );
 // app.get('/', (req, res) => {
 //     res.send('Home page')
 // })
-app.get('/', (req, res) => {
-    res.render('home', {
-        nombre: 'Marco Avaria',
-        titulo: 'Curso de Node'
-    });
-    //res.sendFile(__dirname + '/public/generic.html')
-})
+// app.get('/', (req, res) => {
+//     res.render('home', {
+//         nombre: 'Marco Avaria',
+//         titulo: 'Curso de Node'
+//     });
+//     //res.sendFile(__dirname + '/public/generic.html')
+// })
 
-app.get('/generic', (req, res) => {
-    res.render( 'generic', {
-        nombre: 'Marco Avaria',
-        titulo: 'Curso de Node'
-    });
-});
+// app.get('/generic', (req, res) => {
+//     res.render( 'generic', {
+//         nombre: 'Marco Avaria',
+//         titulo: 'Curso de Node'
+//     });
+// });
 
-app.get('/elements', (req, res) => {
-    res.render( 'elements', {
-        nombre: 'Marco Avaria',
-        titulo: 'Curso de Node'
-    });
-});
+// app.get('/elements', (req, res) => {
+//     res.render( 'elements', {
+//         nombre: 'Marco Avaria',
+//         titulo: 'Curso de Node'
+//     });
+// });
 
 app.get('*', (req, res) => {
-    res.sendFile( __dirname + '/public/back/404.html');
+    res.sendFile( __dirname + '/public/index.html');
 })
 
 //app.listen(8080)
