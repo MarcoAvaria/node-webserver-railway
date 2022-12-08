@@ -11,7 +11,8 @@ import express from 'express';
 const app = express();
 const port = process.env.PORT;
 
-// Handlebars
+// Handlebars... es una librería/template para renderizar plantillas html...
+// TODO: Requiere ('hbs');
 app.set('view engine', 'hbs');
 hbs.registerPartials( __dirname + '/views/partials', function (err) {});
 
@@ -23,27 +24,28 @@ app.use( express.static('public') );
 // app.get('/', (req, res) => {
 //     res.send('Home page')
 // })
-// app.get('/', (req, res) => {
-//     res.render('home', {
-//         nombre: 'Marco Avaria',
-//         titulo: 'Curso de Node'
-//     });
-//     //res.sendFile(__dirname + '/public/generic.html')
-// })
+ 
+app.get('/', (req, res) => {
+    res.render('home', {
+        nombre: 'Marco Avaria',
+        titulo: 'Curso de Node' 
+    });
+    //res.sendFile(__dirname + '/public/generic.html')
+})
 
-// app.get('/generic', (req, res) => {
-//     res.render( 'generic', {
-//         nombre: 'Marco Avaria',
-//         titulo: 'Curso de Node'
-//     });
-// });
+app.get('/generic', (req, res) => {
+    res.render( 'generic', {
+        nombre: 'Marco Avaria',
+        titulo: 'Curso de Node'
+    });
+});
 
-// app.get('/elements', (req, res) => {
-//     res.render( 'elements', {
-//         nombre: 'Marco Avaria',
-//         titulo: 'Curso de Node'
-//     });
-// });
+app.get('/elements', (req, res) => {
+    res.render( 'elements', {
+        nombre: 'Marco Avaria',
+        titulo: 'Curso de Node'
+    });
+});
 
 app.get('*', (req, res) => {
     res.sendFile( __dirname + '/public/index.html');
